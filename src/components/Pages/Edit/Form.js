@@ -11,6 +11,7 @@ const Form = ({ book }) => {
         thumbnail: initialThumbnail,
         rating: initialRating,
         price: initialPrice,
+        featured: initialFeatured,
 
     } = book;
 
@@ -22,6 +23,7 @@ const Form = ({ book }) => {
     const [thumbnail, setThumbnail] = useState(initialThumbnail);
     const [rating, setRating] = useState(initialRating);
     const [price, setPrice] = useState(initialPrice);
+    const [featured, setFeatured] = useState(initialFeatured);
 
 
     const handleSubmit = (e) => {
@@ -34,12 +36,22 @@ const Form = ({ book }) => {
                 thumbnail,
                 price,
                 rating,
-
+                featured
             },
         });
         navigate('/')
         window.location.reload();
     };
+    const handleFeature = () => {
+        if (featured === false) {
+            setFeatured(true)
+        }
+        else {
+            setFeatured(false)
+        }
+
+        // false ? setFeatured(true) : setFeatured(false)
+    }
     return (
 
         <form onSubmit={handleSubmit} class="book-form">
@@ -87,7 +99,10 @@ const Form = ({ book }) => {
             </div>
 
             <div class="flex items-center">
-                <input id="lws-featured" type="checkbox" name="featured" class="w-4 h-4" />
+                <input id="lws-featured"
+                    value={featured}
+                    onChange={handleFeature}
+                    type="checkbox" name="featured" class="w-4 h-4" />
                 <label for="lws-featured" class="ml-2 text-sm"> This is a featured book </label>
             </div>
 

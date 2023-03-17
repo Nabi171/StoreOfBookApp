@@ -26,7 +26,9 @@ const BookCard = ({ book }) => {
                     src={thumbnail} alt="book" />
                 <div class="flex-1 h-full pr-2 pt-2 flex flex-col">
                     <div class="flex items-center justify-between">
-                        <span class="lws-badge">featured</span>
+                        {
+                            featured === true &&
+                            <span class="lws-badge">featured</span>}
                         <div class="text-gray-500 space-x-2">
                             <button onClick={handleEdit} class="lws-edit ">
                                 <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
