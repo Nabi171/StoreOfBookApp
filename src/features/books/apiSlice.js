@@ -44,7 +44,8 @@ export const apiSlice = createApi({
             ],
         }),
         search: builder.query({
-            query: (searchTerm) => `search?q=${searchTerm}`,
+            // query: (searchTerm) => `search?q=${searchTerm}`,
+            query: (searchTerm) => `/book/search/${searchTerm}`,
         }),
     }),
 });

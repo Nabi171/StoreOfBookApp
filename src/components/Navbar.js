@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useLazyQuery } from '@reduxjs/toolkit/query';
-import { apiSlice } from '../features/books/apiSlice';
+// import { useLazyQuery } from '@reduxjs/toolkit/query';
+// import { apiSlice, useSearchBookQuery } from '../features/books/apiSlice';
 // import logo from "../../images/logo.svg"
 const Navbar = () => {
-    const [searchTerm, setSearchTerm] = useState('');
-
+    // const [searchTerm, setSearchTerm] = useState('');
+    // const [search, { books, isLoading }] = useSearchBookQuery(searchTerm);
 
     const handleSearch = () => {
-
+        // search(searchTerm);
     };
     return (
         <div>
@@ -26,7 +26,9 @@ const Navbar = () => {
 
                     </ul>
 
-                    <form onClick={handleSearch} class="flex items-center">
+                    <form
+                        //  onClick={handleSearch} 
+                        class="flex items-center">
                         <div class="group relative rounded-md bg-white">
                             <svg width="20" height="20" fill="currentColor"
                                 class="absolute left-3 top-1/2 -mt-2.5 text-slate-400 pointer-events-none group-focus-within:text-primary">
@@ -35,7 +37,8 @@ const Navbar = () => {
                                 </path>
                             </svg>
                             <input
-                                type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}
+                                type="text"
+                                // value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}
                                 type="text" placeholder="Filter books..." class="search" id="lws-search" />
                         </div>
                     </form>
