@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import img1 from "../images/logo.svg"
 const Navbar = () => {
     // const [searchTerm, setSearchTerm] = useState('');
     // const [search, { books, isLoading }] = useSearchBookQuery(searchTerm);
@@ -12,7 +12,7 @@ const Navbar = () => {
         <div>
             <nav className="py-4 2xl:px-6">
                 <div className="container flex items-center justify-between">
-                    <Link to="/">  <img src="./images/logo.svg" width="150px" className="object-contain" /></Link>
+                    <Link to="/">  <img src={img1} width="150px" className="object-contain" /></Link>
 
                     <ul className="hidden md:flex items-center space-x-6">
                         <Link className="font-semibold cursor-pointer" to="/" id="lws-bookStore">

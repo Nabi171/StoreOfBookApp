@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Navbar from '../../Navbar';
+// import Navbar from '../../Navbar';
+import img1 from "../../../images/logo.svg"
 import BookCard from './BookCard';
 import FeatureAll from './FeatureAll';
 import { useGetBooksQuery } from '../../../features/books/apiSlice';
@@ -49,7 +50,7 @@ const Home = () => {
             {/* <Navbar /> */}
             <nav className="py-4 2xl:px-6">
                 <div className="container flex items-center justify-between">
-                    <Link to="/">  <img src="./images/logo.svg" width="150px" className="object-contain" /></Link>
+                    <Link to="/">  <img src={img1} width="150px" className="object-contain" /></Link>
 
                     <ul className="hidden md:flex items-center space-x-6">
                         <Link className="font-semibold cursor-pointer" to="/" id="lws-bookStore">
