@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useLazyQuery } from '@reduxjs/toolkit/query';
+import { apiSlice } from '../features/books/apiSlice';
 // import logo from "../../images/logo.svg"
 const Navbar = () => {
+    const [searchTerm, setSearchTerm] = useState('');
+
+
+    const handleSearch = () => {
+
+    };
     return (
         <div>
             <nav class="py-4 2xl:px-6">
@@ -15,9 +23,10 @@ const Navbar = () => {
                         <Link class="cursor-pointer" to="/addBook" id="lws-addBook">
                             <li>Add Book</li>
                         </Link>
+
                     </ul>
 
-                    <form class="flex items-center">
+                    <form onClick={handleSearch} class="flex items-center">
                         <div class="group relative rounded-md bg-white">
                             <svg width="20" height="20" fill="currentColor"
                                 class="absolute left-3 top-1/2 -mt-2.5 text-slate-400 pointer-events-none group-focus-within:text-primary">
@@ -25,9 +34,12 @@ const Navbar = () => {
                                     d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z">
                                 </path>
                             </svg>
-                            <input type="text" placeholder="Filter books..." class="search" id="lws-search" />
+                            <input
+                                type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}
+                                type="text" placeholder="Filter books..." class="search" id="lws-search" />
                         </div>
                     </form>
+                    {/* {books && books.map((result) => <div>{result.name}</div>)} */}
                 </div>
             </nav>
         </div>

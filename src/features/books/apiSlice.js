@@ -43,6 +43,9 @@ export const apiSlice = createApi({
 
             ],
         }),
+        search: builder.query({
+            query: (searchTerm) => `search?q=${searchTerm}`,
+        }),
     }),
 });
 
@@ -52,5 +55,6 @@ export const {
     useAddBookMutation,
     useDeleteBookMutation,
     useEditBookMutation,
+    useSearchBookQuery,
 
 } = apiSlice;
