@@ -9,6 +9,7 @@ const AddBookComponent = () => {
     const [thumbnail, setThumbnail] = useState("");
     const [price, setPrice] = useState("");
     const [rating, setRating] = useState("");
+    const [featured, setFeatured] = useState(false);
     const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -17,10 +18,15 @@ const AddBookComponent = () => {
             author,
             thumbnail,
             price,
-            rating
+            rating,
+            featured
         });
         navigate('/')
     };
+
+    const handleFeature = () => {
+        setFeatured(true)
+    }
     return (
         <main class="py-6 2xl:px-6">
             <div class="container">
@@ -71,7 +77,10 @@ const AddBookComponent = () => {
                         </div>
 
                         <div class="flex items-center">
-                            <input id="lws-featured" type="checkbox" name="featured" class="w-4 h-4" />
+                            <input id="lws-featured"
+                                value={featured}
+                                onChange={handleFeature}
+                                type="checkbox" name="featured" class="w-4 h-4" />
                             <label for="lws-featured" class="ml-2 text-sm"> This is a featured book </label>
                         </div>
 
